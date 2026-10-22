@@ -56,6 +56,32 @@ st.markdown("""
     .highlight strong {
         color: #1e3a5f !important;
     }
+
+    .cta-box {
+        background: linear-gradient(135deg, #1e3a5f 0%, #2d6a4f 100%);
+        padding: 3rem 2rem;
+        border-radius: 12px;
+        text-align: center;
+        color: white;
+        margin-top: 2rem;
+    }
+    .cta-box h2 { color: white; margin-bottom: 0.5rem; }
+    .cta-box p { color: #e8f5e9; font-size: 1.15rem; margin-bottom: 1.5rem; }
+    .book-btn {
+        display: inline-block;
+        background-color: #ffffff;
+        color: #1e3a5f !important;
+        font-weight: 700;
+        font-size: 1.15rem;
+        padding: 0.9rem 2.2rem;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+    .book-btn:hover {
+        background-color: #d8f3dc;
+        transform: translateY(-2px);
+    }
 </style>
 """, unsafe_allow_html=True)
 
@@ -137,17 +163,15 @@ st.markdown("""
 **Core outcome:** Providing a service for the things you don’t want to do — so you can bring more peace into your practice and your life.
 """)
 
-# Simple contact / CTA
-st.markdown("---")
-st.subheader("Ready for more peace?")
-with st.form("interest"):
-    name = st.text_input("Name")
-    email = st.text_input("Email")
-    practice = st.text_input("Practice name (optional)")
-    insurance = st.radio("Do you currently accept insurance?", ["Yes", "No", "Sometimes"])
-    submitted = st.form_submit_button("Get in Touch")
-    if submitted and name and email:
-        st.success("Thank you! We’ll reach out soon.")
-        st.balloons()
+# Slick CTA — Book a presentation
+st.markdown("""
+<div class="cta-box">
+    <h2>See AcuMed Suite in Action</h2>
+    <p>Book a short software presentation and discover how AcuHub removes the administrative load<br>so you can focus on your patients — and your peace of mind.</p>
+    <a class="book-btn" href="https://book.squareup.com/appointments/6kib7afaj4d9tv/location/LBDGTAVYB2WK6?buttonTextColor=ffffff&color=212121&locale=en&referrer=so&service_id=C6SYSXTTBBVJIMRL5VI2IMDS" target="_blank">
+        Book Your Presentation
+    </a>
+</div>
+""", unsafe_allow_html=True)
 
 st.caption(f"AcuHub • An AI tools company for acupuncturists • {datetime.now().year}")
