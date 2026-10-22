@@ -8,7 +8,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Custom styling
+# Custom styling — text forced to black on light cards
 st.markdown("""
 <style>
     .hero {
@@ -19,9 +19,10 @@ st.markdown("""
         text-align: center;
         margin-bottom: 2rem;
     }
-    .hero h1 { font-size: 3.2rem; margin-bottom: 0.5rem; font-weight: 700; }
-    .hero p { font-size: 1.4rem; opacity: 0.95; }
+    .hero h1 { font-size: 3.2rem; margin-bottom: 0.5rem; font-weight: 700; color: white; }
+    .hero p { font-size: 1.4rem; opacity: 0.95; color: white; }
     .peace { font-size: 1.6rem; font-weight: 500; color: #d8f3dc; margin-top: 1rem; }
+
     .service-card {
         background: #f8f9fa;
         padding: 1.5rem;
@@ -29,9 +30,32 @@ st.markdown("""
         border-left: 5px solid #2d6a4f;
         height: 100%;
         box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        color: #000000 !important;
     }
-    .service-card h4 { margin-top: 0; color: #1e3a5f; }
-    .highlight { background-color: #d8f3dc; padding: 1.5rem; border-radius: 10px; }
+    .service-card h4 { 
+        margin-top: 0; 
+        color: #1e3a5f !important; 
+    }
+    .service-card p { 
+        color: #000000 !important; 
+    }
+
+    .highlight { 
+        background-color: #d8f3dc; 
+        padding: 1.5rem; 
+        border-radius: 10px; 
+        color: #000000 !important;
+    }
+    .highlight h3, 
+    .highlight p, 
+    .highlight li, 
+    .highlight ul,
+    .highlight strong {
+        color: #000000 !important;
+    }
+    .highlight strong {
+        color: #1e3a5f !important;
+    }
 </style>
 """, unsafe_allow_html=True)
 
